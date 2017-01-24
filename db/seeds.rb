@@ -11,4 +11,23 @@
   Post.create(
       title: Faker::TwinPeaks.location,
       body: Faker::TwinPeaks.quote)
+
+end
+
+5.times do
+  User.create(
+      name: Faker::GameOfThrones.character,
+      email: Faker::Internet.email,
+      bio: Faker::Hipster.sentence)
+end
+
+5.times do
+    Comment.create(
+        body: Faker::Hacker.say_something_smart)
+end
+
+5.times do
+      Tagging.create(
+          name: Faker::ChuckNorris.fact)
+
 end

@@ -1,0 +1,17 @@
+<style>
+  * {
+    font-family: Arial;
+  }
+</style>
+
+<h1>Create a Post</h1>
+
+  <%= form_tag "/posts" do %>
+      <p>Title</p>
+      <input type="Text" name="title">
+      <p>Body</p>
+      <input type="Text" name="body">
+      <p></p>
+      <button>Create Post</button>
+  <% end %>
+

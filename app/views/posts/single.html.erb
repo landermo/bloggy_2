@@ -1,0 +1,14 @@
+<style>
+  * {
+    font-family: Arial;
+  }
+</style>
+
+<a href="/">Back</a>
+
+<h1><%= @post.title %></h1>
+
+<p><%= @post.body %></p>
+
+<button>
+  <a href="/posts/<%= @post.id %>/update">Update Post </a></button>

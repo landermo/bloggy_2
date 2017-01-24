@@ -1,0 +1,18 @@
+<style>
+  * {
+    font-family: Arial;
+  }
+</style>
+
+<h1><%= @post.title %></h1>
+
+<p><%= @post.body %></p>
+
+<%= form_tag "/posts/#{@post.id}/update" do %>
+    <p>Title</p>
+    <input type="Text" name="title">
+    <p>Description</p>
+    <input type="Text" name="body">
+    <p></p>
+    <button>Submit</button>
+<%end%>
