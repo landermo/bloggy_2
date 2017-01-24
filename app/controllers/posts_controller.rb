@@ -30,6 +30,6 @@ class PostsController < ApplicationController
         title: params[:title],
         body:  params[:body]
     )
-    redirect_to '/'
+    redirect_to "/posts/#{params[:id]}"
   end
 end
