@@ -27,7 +27,7 @@ end
 end
 
 5.times do
-      Tagging.create(
+      Tag.create(
           name: Faker::ChuckNorris.fact)
 
 end
