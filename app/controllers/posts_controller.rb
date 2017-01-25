@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   end
 
   def all
-   @posts = Post.all
+    @posts = Post.all
   end
 
   def single

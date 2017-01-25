@@ -10,9 +10,9 @@
 
 <%= form_tag "/posts/#{@post.id}/update" do %>
     <p>Title</p>
-    <input type="Text" name="title">
+    <input type="Text" name="title" value="<%= @post.title %>">
     <p>Description</p>
-    <input type="Text" name="body">
+    <input type="Text" name="body" value="<%= @post.body %>">
     <p></p>
     <button>Submit</button>
 <%end%>
