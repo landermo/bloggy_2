@@ -32,4 +32,22 @@ class PostsController < ApplicationController
     )
     redirect_to "/posts/#{params[:id]}"
   end
+
+  def favorite
+    post = Post.find params[:id]
+    current_user.add_favorite post
+
+    redirect_to "/dashboard"
+  end
+
+
+  def dashboard
+    @favorites = []
+    dashboard = Post.all
+    dashboard.each do |i|
+      if i.is_favorited?(current_user.id)
+        @favorites.push i
+      end
+    end
+  end
 end

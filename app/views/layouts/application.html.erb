@@ -2,13 +2,27 @@
 <html>
 <head>
   <title>Bloggy</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<% if current_user %>
+    <ul class="navbar-links">
+      <li>Logged in as <a href="/users/edit"><%= current_user.email %></a></li>
+      <li><%= link_to 'Log out', '/users/sign_out', method: :delete %></li>
+    </ul>
+<% else %>
+    <ul class="navbar-links">
+      <li><a href="/users/sign_up">Sign Up</a></li>
+      <li><a href="/users/sign_in">Log In</a></li>
+    </ul>
+<% end %>
+
 <%= yield %>
 
 </body>
 </html>
+

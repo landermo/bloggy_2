@@ -10,5 +10,9 @@
 
 <p><%= @post.body %></p>
 
+    <%= form_tag "/posts/#{@post.id}/favorite" do %>
+        <button class="btn btn-default">Add Favorite</button>
+    <% end %>
+
 <button>
   <a href="/posts/<%= @post.id %>/update">Update Post </a></button>

@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
+  devise_for :users
+
 
   get '/' => 'posts#all'
+
+  get '/dashboard' => 'posts#dashboard'
 
   get '/posts/new' => 'posts#new'
 
   get 'posts/:id/update' => 'posts#edit'
 
   post 'posts/:id/update' => 'posts#update'
+
+  post 'posts/:id/favorite' => 'posts#favorite'
 
   get '/posts/:id' => 'posts#single'
 

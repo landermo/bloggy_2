@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-5.times do
+15.times do
   User.create(
       name: Faker::GameOfThrones.character,
       email: Faker::Internet.email,
@@ -15,20 +15,20 @@ end
 
 users = User.all
 
-5.times do
+15.times do
   Post.create(
       title: Faker::TwinPeaks.location,
       body: Faker::TwinPeaks.quote,
-      author_id: users.sample)
+      author_id: users.sample.id)
 end
 
 
-5.times do
+15.times do
     Comment.create(
         body: Faker::Hacker.say_something_smart)
 end
 
-5.times do
+15.times do
   Tag.create(
       name: Faker::ChuckNorris.fact)
 
